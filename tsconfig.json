@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "lib": ["dom", "es6", "es2017", "esnext.asynciterable", "react"],
+        "allowUmdGlobalAccess": true,
+    },
+    "include": ["src/**/*"]
+}
