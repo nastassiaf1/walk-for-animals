@@ -10,6 +10,7 @@ export default {
     loader: {
         '.ts': 'ts',
         '.tsx': 'tsx',
+        '.scss': 'css',
     },
     tsconfig: 'tsconfig.json',
 };
