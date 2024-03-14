@@ -1,0 +1,42 @@
+.nav {
+
+}
+
+.navItem {
+    padding: 16px;
+    color: #004f6f;
+    text-decoration: none;
+}
+
+.navItem,
+.button {
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.button {
+    display: inline-block;
+    margin: 0 16px;
+    padding: 16px 23px 16px 19px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 16px;
+    -webkit-text-size-adjust: none;
+    word-spacing: 1px;
+    color: #fff;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: #0093c9bd;
+    }
+}
+
+.buttonLighter {
+    background-color: #00B2E2;
+}
+
+.buttonDarker {
+    background-color: #0093C9;
+}
