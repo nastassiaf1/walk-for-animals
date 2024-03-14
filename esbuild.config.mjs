@@ -11,6 +11,7 @@ export default {
         '.ts': 'ts',
         '.tsx': 'tsx',
         '.scss': 'css',
+        '.png': 'file',
     },
     tsconfig: 'tsconfig.json',
 };
