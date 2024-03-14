@@ -1,7 +1,8 @@
 import { Link, Outlet } from 'react-router-dom';
+import Navigation from 'components/Navigation';
 
-import layoutStyle from './styles/layout.module.scss';
-import headerStyle from './styles/header.module.scss';
+import layoutStyle from './../styles/layout.module.scss';
+import headerStyle from './../styles/header.module.scss';
 import './../styles/global.scss';
 
 export default function App() {
@@ -11,12 +12,13 @@ export default function App() {
                 <h1>
                     <Link aria-label="Link to Home page" to="/">
                         <img
-                            src="https://secure.animalhumanesociety.org/images/content/pagebuilder/WFA_logo_blue_-_no_date.png"
+                            src="../../public/images/logo.png"
                             className={headerStyle.logo}
                             alt="Walk for Animals"
                         />
                     </Link>
                 </h1>
+                <Navigation />
             </header>
             <main className={layoutStyle.main}>
                 <Outlet />

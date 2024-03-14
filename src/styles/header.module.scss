@@ -1,7 +1,18 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    padding-right: 2rem;
+}
+
 .logo {
     height: 70px;
     width: auto;
     float: left;
     position: relative;
     margin: 0.9em 0em 0.8em 1em;
+    padding-right: 10rem;
 }
