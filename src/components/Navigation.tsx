@@ -4,7 +4,7 @@ import navStyle from './../styles/nav.module.scss';
 
 export default function Navigation() {
     return (
-        <nav className={navStyle.nav}>
+        <nav className={navStyle.nav} aria-label="Main Navigation">
             <NavLink
                 to="/events"
                 className={({ isActive, isPending }) =>
@@ -29,10 +29,16 @@ export default function Navigation() {
             >
                 Prizes
             </NavLink>
-            <button className={`${navStyle.button} ${navStyle.buttonLighter}`}>
+            <button
+                className={`${navStyle.button} ${navStyle.buttonLighter}`}
+                type="button"
+            >
                 Register
             </button>
-            <button className={`${navStyle.button} ${navStyle.buttonDarker}`}>
+            <button
+                className={`${navStyle.button} ${navStyle.buttonDarker}`}
+                type="button"
+            >
                 Donate
             </button>
         </nav>

@@ -23,7 +23,7 @@ export default function MainContent() {
                     pets even more fun, food, and chances to make a difference.
                 </p>
                 <p className={styles.contacts}>
-                    <Link aria-label="Link to Home page" to="/wfaregister">
+                    <Link aria-label="Link to Register page" to="/wfaregister">
                         Register today
                     </Link>
                     to start changing animals' lives.
@@ -38,10 +38,12 @@ export default function MainContent() {
                     Registration is free and easy, plus every dollar raised
                     helps dogs, cats, and critters in our community.
                 </p>
-                <div className={styles.buttonContainer}>
-                    <Link aria-label="Link to Home page" to="/wfaregister">
-                        Register to fundraise
-                    </Link>
+                <div
+                    className={styles.buttonContainer}
+                    role="button"
+                    aria-label="Register to fundraise"
+                >
+                    <Link to="/wfaregister">Register to fundraise</Link>
                 </div>
                 <h3>Make a donation</h3>
                 <p>
@@ -49,10 +51,12 @@ export default function MainContent() {
                     specific walker or team to make a gift and support their
                     fundraising efforts.
                 </p>
-                <div className={styles.buttonContainer}>
-                    <Link aria-label="Link to Home page" to="/wfadonate">
-                        Make a donation
-                    </Link>
+                <div
+                    className={styles.buttonContainer}
+                    role="button"
+                    aria-label="Make a donation"
+                >
+                    <Link to="/wfadonate">Make a donation</Link>
                 </div>
                 <h3>Volunteer</h3>
                 <p>
@@ -60,10 +64,12 @@ export default function MainContent() {
                     volunteers. Sign up to volunteer and enjoy being a part of
                     this extraordinary day.
                 </p>
-                <div className={styles.buttonContainer}>
-                    <Link aria-label="Link to Home page" to="/wfavolunteer">
-                        Sign up to volunteer
-                    </Link>
+                <div
+                    className={styles.buttonContainer}
+                    role="button"
+                    aria-label="Sign up to volunteer"
+                >
+                    <Link to="/wfavolunteer">Sign up to volunteer</Link>
                 </div>
                 <h3>Why join us for Walk for Animals?</h3>
                 <p>
@@ -101,6 +107,7 @@ export default function MainContent() {
                     <a
                         href="https://www.purina.com/"
                         target="_blank"
+                        aria-label="Link to Purine sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -116,6 +123,7 @@ export default function MainContent() {
                     <a
                         href="https://easween.com/"
                         target="_blank"
+                        aria-label="Link to EA Sween sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -131,6 +139,7 @@ export default function MainContent() {
                     <a
                         href="https://deliexpress.com/"
                         target="_blank"
+                        aria-label="Link to Deli Express sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -142,6 +151,7 @@ export default function MainContent() {
                     <a
                         href="https://www.metlife.com/"
                         target="_blank"
+                        aria-label="Link to Met Life sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -157,6 +167,7 @@ export default function MainContent() {
                     <a
                         href="https://www.fox9.com/"
                         target="_blank"
+                        aria-label="Link to Fox 9 sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -172,6 +183,7 @@ export default function MainContent() {
                     <a
                         href="https://www.mytalk1071.com/"
                         target="_blank"
+                        aria-label="Link to MyTalk sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -187,6 +199,7 @@ export default function MainContent() {
                     <a
                         href="https://www.adamspestcontrol.com/"
                         target="_blank"
+                        aria-label="Link to Adam's Pest Control sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -202,6 +215,7 @@ export default function MainContent() {
                     <a
                         href="https://www.leinie.com/av?url=https://www.leinie.com/home"
                         target="_blank"
+                        aria-label="Link to Leinenkugel sponsor's website"
                         rel="noreferrer"
                     >
                         <img
@@ -217,6 +231,7 @@ export default function MainContent() {
                     <a
                         href="https://www.facebook.com/ShanghaiHenris/"
                         target="_blank"
+                        aria-label="Link to Shanghai Henris sponsor's website"
                         rel="noreferrer"
                     >
                         <img
