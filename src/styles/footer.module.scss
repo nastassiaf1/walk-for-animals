@@ -1,0 +1,36 @@
+.footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14.4px;
+    color: #ffffff;
+    background-color: #0086bc;
+
+    &Content {
+        display: flex;
+        margin: 0 10px;
+        text-align: center;
+    }
+
+    &Links {
+        margin: auto;
+        font-size: 12px;
+    }
+
+    &Sources {
+        line-height: 180%;
+        font-size: 12px;
+        text-align: center;
+        color: #aaccda;
+
+        a {
+            line-height: 180%;
+            font-size: 12px;
+            text-decoration: none;
+            color: #aaccda;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}

@@ -4,6 +4,7 @@ import Navigation from 'components/Navigation';
 import layoutStyle from './../styles/layout.module.scss';
 import headerStyle from './../styles/header.module.scss';
 import './../styles/global.scss';
+import Footer from 'components/Footer';
 
 export default function App() {
     return (
@@ -23,7 +24,7 @@ export default function App() {
             <main className={layoutStyle.main}>
                 <Outlet />
             </main>
-            <footer className={layoutStyle.footer}></footer>
+            <Footer />
         </>
     );
 }
