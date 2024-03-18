@@ -1,0 +1,46 @@
+.contactForm {
+    padding-top: 17px;
+    background-color: #ecf2f9;
+
+    &Container {
+        margin: 0 auto 10px auto;
+        max-width: 640px;
+        background-color: white;
+        border: 1px solid #dde5ee;
+    }
+
+    &Logo {
+        margin: 0;
+        background-color: #0086bc;
+
+        img {
+            height: 120px;
+        }
+    }
+
+    &Footer {
+        padding: 20px 30px;
+        font-size: 14px;
+        font-family: National\ 2, sans-serif;
+        color: #7e7e7e;
+
+        a {
+            color: #007faa;
+        }
+    }
+
+    form {
+        margin: 20px 14px 0 14px;
+        padding: 0 0 20px 0;
+        position: relative;
+    }
+
+    &Header {
+        margin: 0 14px 5px;
+        padding: 0.7em 1% 0.7em 1%;
+        font-size: 30px;
+        font-weight: 700;
+        color: #004f6f;
+        border-bottom: 1px solid #cccccc;
+    }
+}

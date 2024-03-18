@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from 'pages/App';
 import ErrorPage from 'pages/ErrorPage';
 import MainContent from 'components/MainContent';
+import ContactFormPage from 'pages/ContactFormPage';
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
                 ],
             },
         ],
+    },
+    {
+        path: '/contact-form',
+        element: <ContactFormPage />,
+        errorElement: <ErrorPage />,
     },
 ]);
 

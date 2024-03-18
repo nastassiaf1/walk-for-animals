@@ -94,9 +94,9 @@ export default function MainContent() {
                 <h3>Questions?</h3>
                 <p className={styles.contacts}>
                     If you have questions, fill out our
-                    <a href="https://animalhumanesociety.wufoo.com/forms/contact-us?field1=Walk%20for%20Animals">
+                    <Link to="/contact-form" target="_blank">
                         contact form
-                    </a>
+                    </Link>
                     or call <a href="tel:763-432-4841">763-432-4841</a>.
                 </p>
                 <p style={{ padding: '30px 0px 30px 0px' }}>&nbsp;</p>

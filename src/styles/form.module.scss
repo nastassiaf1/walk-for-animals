@@ -1,0 +1,46 @@
+.form {
+    &Label {
+        display: block;
+        padding-bottom: 3px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+        color: #444444;
+
+        span {
+            color: rgb(244, 4, 4);
+        }
+    }
+
+    &Item {
+        padding: 6px 1% 9px 1%;
+        transition: background-color 350ms ease-out;
+
+        &Highlight {
+            background-color: #fff7c0;
+        }
+    }
+
+    textarea {
+        width: 99%;
+        font-size: 120%;
+        font-style: normal;
+        font-weight: 400;
+        color: #666666;
+    }
+
+    button {
+        margin-left: 7px;
+        padding: 0 7px;
+        font-size: 100%;
+    }
+
+    select, input {
+        width: 300px;
+        font-style: normal;
+        font-weight: 400;
+        color: #666666;
+        font-size: 120%;
+    }
+}
