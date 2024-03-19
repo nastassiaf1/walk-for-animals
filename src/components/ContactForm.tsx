@@ -21,18 +21,17 @@ export default function ContactForm() {
         formState: { errors },
     } = useForm<ContactFormValues>();
 
-    const onSubmit: SubmitHandler<ContactFormValues> = async (data, e) => {
-        e.stopPropagation();
-
-        await sendRequest({
+    const onSubmit: SubmitHandler<ContactFormValues> = (data) => {
+        sendRequest({
             id: uuid4(),
             data,
         });
     };
 
     useEffect(() => {
+        console.log(result.isSuccess);
         if (result.isSuccess) {
-            dispatch(setStatusMessage(null));
+            dispatch(setStatusMessage('The request has been sent'));
         }
     }, [result.isSuccess, result.data]);
 

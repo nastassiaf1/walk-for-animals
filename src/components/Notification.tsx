@@ -20,13 +20,12 @@ export default function StatusMessage() {
         return () => clearTimeout(timer);
     }, [statusMessage, dispatch]);
 
-    return (
-        statusMessage &&
-        createPortal(
-            <div className={styles.notification}>
+    return createPortal(
+        <div className={styles.notification}>
+            {statusMessage && (
                 <p className={styles.notificationMessage}>{statusMessage}</p>
-            </div>,
-            document.body
-        )
+            )}
+        </div>,
+        document.body
     );
 }
