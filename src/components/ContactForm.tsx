@@ -4,6 +4,7 @@ import { ContactFormValues } from 'interfaces/ContactForm';
 
 import styles from './../styles/form.module.scss';
 import contactPageStyles from './../styles/contact.module.scss';
+import errorStyles from './../styles/error.module.scss';
 
 export default function ContactForm() {
     const [focused, setFocused] = useState<string | null>(null);
@@ -50,7 +51,11 @@ export default function ContactForm() {
                             Public veterinary care
                         </option>
                     </select>
-                    {errors.subject && <p>This field is required</p>}
+                    {errors.subject && (
+                        <p className={errorStyles.errorDescription}>
+                            This field is required
+                        </p>
+                    )}
                 </div>
 
                 <div
@@ -66,7 +71,11 @@ export default function ContactForm() {
                         onFocus={() => setFocused('name')}
                         onBlur={() => setFocused(null)}
                     />
-                    {errors.name && <p>This field is required</p>}
+                    {errors.name && (
+                        <p className={errorStyles.errorDescription}>
+                            This field is required
+                        </p>
+                    )}
                 </div>
 
                 <div
@@ -82,7 +91,11 @@ export default function ContactForm() {
                         onFocus={() => setFocused('email')}
                         onBlur={() => setFocused(null)}
                     />
-                    {errors.email && <p>This field is required</p>}
+                    {errors.email && (
+                        <p className={errorStyles.errorDescription}>
+                            This field is required
+                        </p>
+                    )}
                 </div>
 
                 <div
@@ -98,7 +111,11 @@ export default function ContactForm() {
                         onFocus={() => setFocused('phoneNumber')}
                         onBlur={() => setFocused(null)}
                     />
-                    {errors.phoneNumber && <p>This field is required</p>}
+                    {errors.phoneNumber && (
+                        <p className={errorStyles.errorDescription}>
+                            This field is required
+                        </p>
+                    )}
                 </div>
 
                 <div
@@ -116,7 +133,11 @@ export default function ContactForm() {
                         onFocus={() => setFocused('message')}
                         onBlur={() => setFocused(null)}
                     />
-                    {errors.message && <p>This field is required</p>}
+                    {errors.message && (
+                        <p className={errorStyles.errorDescription}>
+                            This field is required
+                        </p>
+                    )}
                 </div>
 
                 <div
@@ -137,7 +158,11 @@ export default function ContactForm() {
                         onFocus={() => setFocused('translationOptions')}
                         onBlur={() => setFocused(null)}
                     />
-                    {errors.translationOptions && <p>This field is required</p>}
+                    {errors.translationOptions && (
+                        <p className={errorStyles.errorDescription}>
+                            This field is required
+                        </p>
+                    )}
                 </div>
 
                 <button type="submit">Submit</button>
