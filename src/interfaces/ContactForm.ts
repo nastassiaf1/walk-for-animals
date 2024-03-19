@@ -9,5 +9,5 @@ export interface ContactFormValues {
 
 export interface ContactFormData {
     id: string;
-    formData: FormData;
+    data: ContactFormValues;
 }

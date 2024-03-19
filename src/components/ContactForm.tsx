@@ -1,6 +1,10 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { uuid4 } from 'uuid4';
 import { ContactFormValues } from 'interfaces/ContactForm';
+import { useSendRequestMutation } from 'services/request';
+import { useDispatch } from 'react-redux';
+import { setStatusMessage } from 'store/slices/notificationSlice';
 
 import styles from './../styles/form.module.scss';
 import contactPageStyles from './../styles/contact.module.scss';
@@ -8,6 +12,8 @@ import errorStyles from './../styles/error.module.scss';
 
 export default function ContactForm() {
     const [focused, setFocused] = useState<string | null>(null);
+    const [sendRequest, result] = useSendRequestMutation();
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -15,9 +21,20 @@ export default function ContactForm() {
         formState: { errors },
     } = useForm<ContactFormValues>();
 
-    const onSubmit: SubmitHandler<ContactFormValues> = (data) => {
-        console.log(data);
+    const onSubmit: SubmitHandler<ContactFormValues> = async (data, e) => {
+        e.stopPropagation();
+
+        await sendRequest({
+            id: uuid4(),
+            data,
+        });
     };
+
+    useEffect(() => {
+        if (result.isSuccess) {
+            dispatch(setStatusMessage(null));
+        }
+    }, [result.isSuccess, result.data]);
 
     return (
         <>

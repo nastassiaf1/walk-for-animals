@@ -1,10 +1,11 @@
 import { Link, Outlet } from 'react-router-dom';
 import Navigation from 'components/Navigation';
+import Footer from 'components/Footer';
+import StatusMessage from 'components/Notification';
 
 import layoutStyle from './../styles/layout.module.scss';
 import headerStyle from './../styles/header.module.scss';
 import './../styles/global.scss';
-import Footer from 'components/Footer';
 
 export default function App() {
     return (
@@ -21,10 +22,14 @@ export default function App() {
                 </h1>
                 <Navigation />
             </header>
+
             <main className={layoutStyle.main}>
                 <Outlet />
             </main>
+
             <Footer />
+
+            <StatusMessage />
         </>
     );
 }
