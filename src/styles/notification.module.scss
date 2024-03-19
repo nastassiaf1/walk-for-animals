@@ -1,0 +1,14 @@
+.notification {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100vw;
+
+    &Message {
+        margin: auto;
+        padding: 15px;
+        background-color: rgb(44, 44, 44);
+        color: rgb(255, 246, 246);
+        font-size: 120px;
+    }
+}

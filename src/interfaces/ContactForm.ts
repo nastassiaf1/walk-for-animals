@@ -6,3 +6,8 @@ export interface ContactFormValues {
     message: string;
     translationOptions: string;
 }
+
+export interface ContactFormData {
+    id: string;
+    formData: FormData;
+}
