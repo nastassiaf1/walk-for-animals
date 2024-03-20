@@ -1,6 +1,6 @@
 module.exports = {
     server: './',
-    files: 'dist/*.*',
+    files: ['dist/*.*', 'public/*.*'],
     watch: true,
     watchOptions: {
         ignored: ['./db.json', './bs-config.js'],
@@ -9,7 +9,7 @@ module.exports = {
     notify: false,
     port: 4200,
     middleware: function (req, res, next) {
-        const pathsToExclude = ['.js', '.css', '.png', '.jpg'];
+        const pathsToExclude = ['.js', '.css', '.png', '.jpg', '.jpeg'];
         if (!pathsToExclude.some((ext) => req.url.includes(ext))) {
             req.url = '/index.html';
         }
