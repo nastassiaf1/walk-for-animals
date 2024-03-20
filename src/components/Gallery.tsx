@@ -1,32 +1,53 @@
-import { MouseEventHandler } from 'react';
+import { useState } from 'react';
 
 import styles from './../styles/gallery.module.scss';
 import { Slides } from 'constants/slides';
 
 export default function Gallery() {
-    function plusSlides(
-        position: number
-    ): MouseEventHandler<HTMLAnchorElement> {}
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+    function plusSlides(slideIndex: number): void {
+        let nextIndex = activeSlideIndex + slideIndex;
+
+        if (nextIndex < 0) nextIndex = Slides.length - 1;
+        if (nextIndex > Slides.length - 1) nextIndex = 0;
+
+        setActiveSlideIndex(nextIndex);
+    }
 
     return (
         <div className={styles.gallery}>
+            <div className={styles.galleryCounter}>
+                {activeSlideIndex + 1}/{Slides.length}
+            </div>
             {Slides.map((slide, index) => {
                 return (
-                    <div className={styles.slide} key={index}>
-                        <div className={styles.slideImg}>
-                            <img src={`./../../public/images/slides/1.jpeg`} />
+                    <div
+                        className={`${styles.gallerySlide} ${index === activeSlideIndex ? styles.gallerySlideActive : null}`}
+                        key={index}
+                    >
+                        <div className={styles.gallerySlideImg}>
+                            <img
+                                src={`./../../public/images/slides/${slide.src}`}
+                            />
                         </div>
 
                         <div className={styles.slideText}>{slide.text}</div>
                     </div>
                 );
             })}
-            <a className="next" onClick={plusSlides(1)}>
+            <button
+                className={`${styles.galleryButton} ${styles.galleryButtonNext}`}
+                onClick={() => plusSlides(1)}
+            >
                 ❯
-            </a>{' '}
-            <a className="prev" onClick={plusSlides(-1)}>
+            </button>{' '}
+            <button
+                className={styles.galleryButton}
+                onClick={() => plusSlides(-1)}
+            >
                 ❮
-            </a>
+            </button>
         </div>
     );
 }

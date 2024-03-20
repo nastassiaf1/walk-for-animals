@@ -63,7 +63,7 @@ export const Slides = [
     },
     {
         src: '4.jpeg',
-        test: (
+        text: (
             <>
                 <p>
                     <strong>
