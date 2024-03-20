@@ -18,6 +18,7 @@ export default function ContactForm() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm<ContactFormValues>();
 
@@ -29,20 +30,22 @@ export default function ContactForm() {
     };
 
     useEffect(() => {
-        console.log(result.isSuccess);
         if (result.isSuccess) {
             dispatch(setStatusMessage('The request has been sent'));
+            reset();
+        }
+
+        if (result.isError) {
+            dispatch(
+                setStatusMessage('Something went wrong. Please try again!')
+            );
         }
     }, [result.isSuccess, result.data]);
 
     return (
         <>
             <h2 className={contactPageStyles.contactFormHeader}>Contact us</h2>
-            <form
-                className={styles.form}
-                onSubmit={handleSubmit(onSubmit)}
-                noValidate
-            >
+            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
                 <div
                     className={`${styles.formItem} ${focused === 'subject' ? styles.formItemHighlight : ''}`}
                 >
