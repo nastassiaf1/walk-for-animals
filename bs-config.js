@@ -2,6 +2,9 @@ module.exports = {
     server: './',
     files: 'dist/*.*',
     watch: true,
+    watchOptions: {
+        ignored: ['./db.json', './bs-config.js'],
+    },
     open: false,
     notify: false,
     port: 4200,
