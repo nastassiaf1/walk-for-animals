@@ -3,6 +3,7 @@ import App from 'pages/App';
 import ErrorPage from 'pages/ErrorPage';
 import MainContent from 'components/MainContent';
 import ContactFormPage from 'pages/ContactFormPage';
+import PrizesPage from 'pages/PrizesPage';
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
                     {
                         path: '/',
                         element: <MainContent />,
+                    },
+                    {
+                        path: '/prizes',
+                        element: <PrizesPage />,
                     },
                 ],
             },

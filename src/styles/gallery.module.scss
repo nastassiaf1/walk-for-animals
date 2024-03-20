@@ -1,0 +1,12 @@
+.gallery {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    &Slide {
+        display: none;
+
+        &Active {
+            display: initial;
+        }
+    }
+}
