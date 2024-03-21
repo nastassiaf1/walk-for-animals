@@ -11,7 +11,7 @@ export default function EventsPage() {
                 <img
                     src="./../../public/images/dogs.jpeg"
                     alt="Walk for Animals"
-                    className={styles.eventImg}
+                    className={mainStyles.previewImg}
                 />
             </div>
             <p>
@@ -122,7 +122,7 @@ export default function EventsPage() {
                         arrival.
                     </p>
                     <p>
-                        <span className={styles.eventTextUnderline}>
+                        <span className={styles.textUnderline}>
                             Donation drop-off
                         </span>
                     </p>
@@ -173,8 +173,8 @@ export default function EventsPage() {
             </p>
             <h4>Questions?</h4>
             <p className={mainStyles.contacts}>
-                Check out our <a href="SPageNavigator/wfafaqs">FAQ page</a>. If
-                your questions aren`t answered there, fill out our{' '}
+                Check out our <Link to="events/wfafaqs">FAQ page</Link>. If your
+                questions aren`t answered there, fill out our{' '}
                 <Link to="/contact-form" target="_blank">
                     contact form
                 </Link>{' '}

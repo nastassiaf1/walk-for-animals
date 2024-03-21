@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Outlet, createBrowserRouter } from 'react-router-dom';
 import App from 'pages/App';
 import ErrorPage from 'pages/ErrorPage';
 import MainContent from 'components/MainContent';
@@ -6,6 +6,8 @@ import ContactFormPage from 'pages/ContactFormPage';
 import PrizesPage from 'pages/PrizesPage';
 import EventsPage from 'pages/EventsPage';
 import VendorsPage from 'pages/VendorsPage';
+import FaqsPage from 'pages/FaqsPage';
+import ParkingPage from 'pages/ParkingPage';
 
 const router = createBrowserRouter([
     {
@@ -26,11 +28,25 @@ const router = createBrowserRouter([
                     },
                     {
                         path: '/events',
-                        element: <EventsPage />,
-                    },
-                    {
-                        path: '/wfavendors',
-                        element: <VendorsPage />,
+                        element: <Outlet />,
+                        children: [
+                            {
+                                path: '',
+                                element: <EventsPage />,
+                            },
+                            {
+                                path: 'wfavendors',
+                                element: <VendorsPage />,
+                            },
+                            {
+                                path: 'parking',
+                                element: <ParkingPage />,
+                            },
+                            {
+                                path: 'wfafaqs',
+                                element: <FaqsPage />,
+                            },
+                        ],
                     },
                 ],
             },

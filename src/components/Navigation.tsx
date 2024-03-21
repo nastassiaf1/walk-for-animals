@@ -16,10 +16,9 @@ export default function Navigation() {
                 </NavLink>
                 <div className={styles.navDropdown}>
                     <Link to="/events">General info</Link>
-                    <Link to="/wfavendors">Food &amp; retail</Link>
-                    <Link to="/events">Parking</Link>
-                    <Link to="/events">Event FAQs</Link>
-                    <Link to="/events">Event partners</Link>
+                    <Link to="/events/wfavendors">Food &amp; retail</Link>
+                    <Link to="/events/parking">Parking</Link>
+                    <Link to="/events/wfafaqs">Event FAQs</Link>
                 </div>
             </div>
 
