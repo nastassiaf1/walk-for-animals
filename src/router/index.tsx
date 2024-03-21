@@ -5,6 +5,7 @@ import MainContent from 'components/MainContent';
 import ContactFormPage from 'pages/ContactFormPage';
 import PrizesPage from 'pages/PrizesPage';
 import EventsPage from 'pages/EventsPage';
+import VendorsPage from 'pages/VendorsPage';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
                     {
                         path: '/events',
                         element: <EventsPage />,
+                    },
+                    {
+                        path: '/wfavendors',
+                        element: <VendorsPage />,
                     },
                 ],
             },
