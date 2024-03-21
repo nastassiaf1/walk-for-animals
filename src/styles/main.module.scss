@@ -14,6 +14,12 @@
     margin: auto;
     max-width: 1080px;
     width: 90%;
+
+    a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #006ba6;
+    }
 }
 
 .buttonContainer {
@@ -41,7 +47,4 @@
 
 .contacts a {
     padding: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #006ba6;
 }

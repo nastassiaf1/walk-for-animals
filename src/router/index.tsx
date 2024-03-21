@@ -4,6 +4,7 @@ import ErrorPage from 'pages/ErrorPage';
 import MainContent from 'components/MainContent';
 import ContactFormPage from 'pages/ContactFormPage';
 import PrizesPage from 'pages/PrizesPage';
+import EventsPage from 'pages/EventsPage';
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
                     {
                         path: '/prizes',
                         element: <PrizesPage />,
+                    },
+                    {
+                        path: '/events',
+                        element: <EventsPage />,
                     },
                 ],
             },
