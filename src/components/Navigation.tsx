@@ -32,7 +32,9 @@ export default function Navigation() {
                     Fundraising
                 </NavLink>
                 <div className={styles.navDropdown}>
-                    <Link to="/events">Fundraising tips & tools</Link>
+                    <Link to="/wfafundraisingtips">
+                        Fundraising tips & tools
+                    </Link>
                     <Link to="/events">Matching gifts</Link>
                     <Link to="/events">Teams</Link>
                 </div>

@@ -8,6 +8,7 @@ import EventsPage from 'pages/EventsPage';
 import VendorsPage from 'pages/VendorsPage';
 import FaqsPage from 'pages/FaqsPage';
 import ParkingPage from 'pages/ParkingPage';
+import FundraisingtipsPage from 'pages/FundraisingtipsPage';
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,16 @@ const router = createBrowserRouter([
                             {
                                 path: 'wfafaqs',
                                 element: <FaqsPage />,
+                            },
+                        ],
+                    },
+                    {
+                        path: '/wfafundraisingtips',
+                        element: <Outlet />,
+                        children: [
+                            {
+                                path: '',
+                                element: <FundraisingtipsPage />,
                             },
                         ],
                     },

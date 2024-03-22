@@ -1,7 +1,9 @@
-const FaqsData = [
+import { AccordionData } from 'interfaces/Accordion';
+
+const FaqsData: AccordionData[] = [
     {
-        question: 'Do I need to fundraise to attend the Walk for Animals?',
-        answer: (
+        header: 'Do I need to fundraise to attend the Walk for Animals?',
+        description: (
             <p>
                 All animal lovers are welcome at the Walk for Animals whether
                 they have fundraised or not.&nbsp;To safeguard all our
@@ -12,8 +14,8 @@ const FaqsData = [
         ),
     },
     {
-        question: 'Is it free to attend the Walk for Animals?',
-        answer: (
+        header: 'Is it free to attend the Walk for Animals?',
+        description: (
             <p>
                 While there’s no admission fee, the Walk for Animals is Animal
                 Humane Society’s largest and most important fundraising event of
@@ -24,8 +26,8 @@ const FaqsData = [
         ),
     },
     {
-        question: 'How do I customize my personal fundraising page?',
-        answer: (
+        header: 'How do I customize my personal fundraising page?',
+        description: (
             <>
                 <p>
                     When logged in to your Participant Center, scroll down to
@@ -59,8 +61,8 @@ const FaqsData = [
         ),
     },
     {
-        question: 'How do I fundraise for the Walk on Facebook?',
-        answer: (
+        header: 'How do I fundraise for the Walk on Facebook?',
+        description: (
             <>
                 <p>
                     Sharing your fundraiser on Facebook is quick and easy. From
@@ -106,8 +108,8 @@ const FaqsData = [
         ),
     },
     {
-        question: 'How do I send emails from my Participant Center?',
-        answer: (
+        header: 'How do I send emails from my Participant Center?',
+        description: (
             <>
                 <p>
                     We want to help make fundraising easy with helpful tools and

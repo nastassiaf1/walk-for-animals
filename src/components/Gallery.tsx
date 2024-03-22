@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import styles from './../styles/gallery.module.scss';
-import { Slides } from 'constants/slides';
+import { Slides } from 'data/slides';
 
 export default function Gallery() {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
