@@ -173,8 +173,8 @@ export default function EventsPage() {
             </p>
             <h4>Questions?</h4>
             <p className={mainStyles.contacts}>
-                Check out our <Link to="events/wfafaqs">FAQ page</Link>. If your
-                questions aren`t answered there, fill out our{' '}
+                Check out our <Link to="/events/wfafaqs">FAQ page</Link>. If
+                your questions aren`t answered there, fill out our{' '}
                 <Link to="/contact-form" target="_blank">
                     contact form
                 </Link>{' '}
