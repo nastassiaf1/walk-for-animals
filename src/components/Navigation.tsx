@@ -51,17 +51,23 @@ export default function Navigation() {
                 </NavLink>
             </div>
 
-            <button
+            <Link
                 className={`${styles.button} ${styles.buttonLighter}`}
                 type="button"
+                to="/register"
             >
                 Register
-            </button>
-            <button
+            </Link>
+            <Link
                 className={`${styles.button} ${styles.buttonDarker}`}
                 type="button"
+                to="/donate"
             >
                 Donate
+            </Link>
+
+            <button className={`${styles.button} ${styles.loginButton}`}>
+                <img src="./../../public/images/Login_icon_2.png" alt="Login" />
             </button>
         </nav>
     );

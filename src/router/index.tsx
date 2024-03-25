@@ -9,6 +9,7 @@ import VendorsPage from 'pages/VendorsPage';
 import FaqsPage from 'pages/FaqsPage';
 import ParkingPage from 'pages/ParkingPage';
 import FundraisingtipsPage from 'pages/FundraisingtipsPage';
+import RegisterPage from 'pages/RegisterPage';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
                     {
                         path: '/prizes',
                         element: <PrizesPage />,
+                    },
+                    {
+                        path: '/register',
+                        element: <RegisterPage />,
                     },
                     {
                         path: '/events',
