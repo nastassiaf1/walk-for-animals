@@ -47,23 +47,17 @@ export default function RegisterPage() {
                 </p>
                 <p></p>
                 <div className={styles.buttonContainer}>
-                    <a href="../site/TRR/Walk/General?fr_tm_opt=none&amp;pg=tfind&amp;fr_id=1350">
-                        Register as an individual
-                    </a>
+                    <Link to="/login">Register as an individual</Link>
                 </div>
                 <p></p>
                 <p></p>
                 <div className={styles.buttonContainer}>
-                    <a href="../site/TRR/Walk/General?fr_id=1350&amp;pg=tfind">
-                        Join an existing team
-                    </a>
+                    <Link to="/login">Join an existing team</Link>
                 </div>
                 <p></p>
                 <p></p>
                 <div className={styles.buttonContainer}>
-                    <a href="TRR/Walk/General?fr_tm_opt=new&amp;pg=tfind&amp;fr_id=1350">
-                        Create a team
-                    </a>
+                    <Link to="/login">Create a team</Link>
                 </div>
                 <p>
                     If you need assistance registering, please fill out our{' '}
