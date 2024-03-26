@@ -42,7 +42,7 @@
         "build": "node esbuild.mjs",
         "dev": "node esbuild.mjs --watch & browser-sync start --config bs-config.js",
         "start": "http-server ./ -p 4200",
-        "start-server": "json-server --watch db.json --port 3000",
+        "server": "json-server --watch db.json --port 3000",
         "format": "prettier --write .",
         "lint": "eslint ."
     }
