@@ -39,15 +39,50 @@
     transition: 0.3s ease;
     cursor: pointer;
 
-    a {
+    a, button {
         font-weight: bold;
         font-size: 20px;
         color: #fff;
         text-decoration: none;
     }
 
+    button {
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &Disabled,
+    &Disabled:hover {
+        background-color: rgb(133, 131, 131) !important;
+
+        &,
+        button,
+        a {
+            cursor: initial;
+        }
+    }
+
     &:hover {
         background-color: #004f6f;
+    }
+}
+
+.errorContainer {
+    margin-top: 10px;
+    padding: 3px;
+    border: 1px solid #B94A49;
+    border-radius: 5px;
+    background-color: #feeaeb;
+
+    .error {
+        display: block;
+        margin: 0;
+        max-width: 300px;
+        line-height: 1.5;
+        font-size: 1em;
+        color: #900;
     }
 }
 

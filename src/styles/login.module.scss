@@ -1,5 +1,6 @@
 .loginContainer {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 32px;
 
     div:first-child {
@@ -49,6 +50,7 @@
     margin-bottom: 16px;
     padding: 0;
     color: #3596D4;
+    font-size: 16px;
     font-weight: 600;
     background: initial;
     border: 0;
