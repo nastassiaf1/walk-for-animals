@@ -43,7 +43,7 @@ export default function MainContent() {
                     role="button"
                     aria-label="Register to fundraise"
                 >
-                    <Link to="/wfaregister">Register to fundraise</Link>
+                    <Link to="/register">Register to fundraise</Link>
                 </div>
                 <h3>Make a donation</h3>
                 <p>
