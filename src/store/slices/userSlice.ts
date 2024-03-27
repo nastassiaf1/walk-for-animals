@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { User } from 'interfaces/user';
+import { User, UserIndividual } from 'interfaces/User';
 
-const initialState: { currentUser: User | null } = {
+const initialState: { currentUser: User | UserIndividual | null } = {
     currentUser: null,
 };
 

@@ -11,6 +11,7 @@ import ParkingPage from 'pages/ParkingPage';
 import FundraisingtipsPage from 'pages/FundraisingtipsPage';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
+import RegistrationForm from 'components/registration/RegistrationForm';
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                     {
                         path: '/login',
                         element: <LoginPage />,
+                    },
+                    {
+                        path: '/create-acc',
+                        element: <RegistrationForm />,
                     },
                     {
                         path: '/events',

@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { userApi } from 'services/user';
-import { useNavigate } from 'react-router-dom';
-import { User } from 'interfaces/user';
+import { User } from 'interfaces/User';
 
 import mainStyles from './../styles/main.module.scss';
 import styles from './../styles/login.module.scss';
@@ -15,6 +14,7 @@ export default function LoginPage() {
     const [isEmailInputVisible, setIsEmailInputVisible] = useState(false);
     const [notImplementedError, setNotImplementedError] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
     const dispatch = useDispatch();
     // login imitation
     const [trigger, { isLoading }] =
@@ -53,7 +53,9 @@ export default function LoginPage() {
                         <div
                             className={`${mainStyles.buttonContainer} ${styles.button}`}
                         >
-                            <Link to="/create-acc">Create an account</Link>
+                            <Link to={`/create-acc${location.search}`}>
+                                Create an account
+                            </Link>
                         </div>
                     </div>
                     <div>

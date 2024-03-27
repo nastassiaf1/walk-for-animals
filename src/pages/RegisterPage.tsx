@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import styles from './../styles/main.module.scss';
+import { UserRole } from 'const/user';
 
 export default function RegisterPage() {
     return (
@@ -47,17 +48,23 @@ export default function RegisterPage() {
                 </p>
                 <p></p>
                 <div className={styles.buttonContainer}>
-                    <Link to="/login">Register as an individual</Link>
+                    <Link to={`/login?type=${UserRole.INDIVIDUAL}`}>
+                        Register as an individual
+                    </Link>
                 </div>
                 <p></p>
                 <p></p>
                 <div className={styles.buttonContainer}>
-                    <Link to="/login">Join an existing team</Link>
+                    <Link to={`/login?type=${UserRole.TEAMMATE}`}>
+                        Join an existing team
+                    </Link>
                 </div>
                 <p></p>
                 <p></p>
                 <div className={styles.buttonContainer}>
-                    <Link to="/login">Create a team</Link>
+                    <Link to={`/login?type=${UserRole.TEAM}`}>
+                        Create a team
+                    </Link>
                 </div>
                 <p>
                     If you need assistance registering, please fill out our{' '}

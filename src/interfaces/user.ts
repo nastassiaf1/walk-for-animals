@@ -1,3 +1,5 @@
+import { UserRole, UserSize } from "const/user";
+
 export interface User {
     id?: string;
     email?: string;
@@ -6,9 +8,15 @@ export interface User {
     role: UserRole
 }
 
-export enum UserRole {
-    TEAM = 'team',
-    INDIVIDUAL = 'individual',
-    TEAMMATE = 'teammate',
-    ADMIN = 'admin',
+export interface UserIndividual extends User {
+    firstName: string;
+    lastName: string;
+    city: string;
+    street: string;
+    postCode: string;
+    isNewUser: boolean;
+    size: UserSize;
+    phoneNumber?: string;
+    fundraisingGoal: string;
+    donation: string;
 }

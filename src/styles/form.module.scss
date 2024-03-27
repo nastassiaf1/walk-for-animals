@@ -44,3 +44,13 @@
         font-size: 120%;
     }
 }
+
+.registrationForm {
+    &Item {
+        visibility: hidden;
+
+        &Active {
+            visibility: initial;
+        }
+    }
+}
