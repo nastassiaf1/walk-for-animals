@@ -1,6 +1,14 @@
 export interface User {
     id?: string;
-    login: string;
     email?: string;
+    login: string;
     password: string;
+    role: UserRole
+}
+
+export enum UserRole {
+    TEAM = 'team',
+    INDIVIDUAL = 'individual',
+    TEAMMATE = 'teammate',
+    ADMIN = 'admin',
 }
