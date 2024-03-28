@@ -51,7 +51,7 @@ export default function LoginPage() {
                             New to the Walk? Start the <br /> process here.
                         </p>
                         <div
-                            className={`${mainStyles.buttonContainer} ${styles.button}`}
+                            className={`${mainStyles.buttonContainer} ${mainStyles.shortButton}`}
                         >
                             <Link to={`/create-acc${location.search}`}>
                                 Create an account
@@ -96,7 +96,7 @@ export default function LoginPage() {
                                     !!errors.password
                                         ? mainStyles.buttonContainerDisabled
                                         : ''
-                                } ${styles.button}`}
+                                } ${mainStyles.shortButton}`}
                             >
                                 <button type="submit">Log in</button>
                             </div>

@@ -11,7 +11,7 @@ import ParkingPage from 'pages/ParkingPage';
 import FundraisingtipsPage from 'pages/FundraisingtipsPage';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
-import RegistrationForm from 'components/registration/RegistrationForm';
+import UserForm from 'components/registration/forms/userForm';
 
 const router = createBrowserRouter([
     {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: '/create-acc',
-                        element: <RegistrationForm />,
+                        element: <UserForm />,
                     },
                     {
                         path: '/events',

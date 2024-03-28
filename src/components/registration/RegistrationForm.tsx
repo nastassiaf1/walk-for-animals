@@ -5,7 +5,7 @@ import TeamForm from './forms/teamForm';
 import TeammateForm from './forms/teammateForm';
 import NotFoundPage from 'pages/NotFoundPage';
 
-export default function RegistrationForm() {
+export default function userForm() {
     const location = useLocation();
     const userType = new URLSearchParams(location.search).get('type');
 

@@ -9,18 +9,20 @@ import { setStatusMessage } from 'store/slices/notificationSlice';
 import { setUser } from 'store/slices/userSlice';
 
 import styles from './../../../styles/form.module.scss';
+import mainStyles from './../../../styles/main.module.scss';
+import loginStyles from './../../../styles/login.module.scss';
 
 export default function UserForm() {
     const [currentStep, setCurrentStep] = useState(0);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [addUser, { isLoading }] = useAddUserMutation();
+    const [addUser] = useAddUserMutation();
     const maxStep = 1;
 
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        //formState: { errors }, //todo: add isLoading and errors state
     } = useForm<UserIndividual>();
 
     const handleNextStep = (shift: number) => {
@@ -44,19 +46,22 @@ export default function UserForm() {
     };
 
     return (
-        <div className={styles.formContainer}>
+        <div className={`${styles.formContainer} ${mainStyles.content}`}>
             <form
-                className={styles.registrationForm}
+                className={`${styles.userForm} ${loginStyles.loginForm}`}
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <div
-                    className={`${styles.registrationFormItem} ${currentStep === 0 ? styles.registrationFormItemActive : ''}`}
+                    className={`${styles.userFormItem} ${currentStep !== 0 ? styles.userFormItemHidden : ''}`}
                 >
                     <h2 className={styles.formHeader}>
                         Set your fundraising goal
                     </h2>
                     <div>
-                        <label htmlFor="fundraisingGoal">
+                        <label
+                            htmlFor="fundraisingGoal"
+                            className={loginStyles.loginFormLabel}
+                        >
                             Your fundraising goal:
                         </label>
                         <input
@@ -66,9 +71,13 @@ export default function UserForm() {
                             size={15}
                             maxLength={15}
                             required
+                            className={loginStyles.loginFormInput}
                             {...register('fundraisingGoal')}
                         />
-                        <span>Suggested goal:&nbsp;$350.00</span>
+                        <br />
+                        <span className={styles.userFormTip}>
+                            Suggested goal:&nbsp;$350.00
+                        </span>
                     </div>
 
                     <div>
@@ -76,10 +85,14 @@ export default function UserForm() {
                             Lead by example! Kick things off by making a
                             donation. (Average donation is $75.){' '}
                         </p>
-                        <label htmlFor="donation">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="donation"
+                        >
                             Personal donation amount:
                         </label>
                         <input
+                            className={loginStyles.loginFormInput}
                             type="text"
                             id="donation"
                             size={15}
@@ -91,72 +104,118 @@ export default function UserForm() {
                 </div>
 
                 <div
-                    className={`${styles.registrationFormItem} ${currentStep === maxStep ? styles.registrationFormItemActive : ''}`}
+                    className={`${styles.userFormItem} ${currentStep !== 1 ? styles.userFormItemHidden : ''}`}
                 >
                     <h2 className={styles.formHeader}>Registration</h2>
                     <p>
                         <span>*</span>Indicates Required
                     </p>
-                    <p>Personal information</p>
+                    <p className={styles.userFormSubhead}>
+                        Personal information
+                    </p>
                     <div>
-                        <label htmlFor="firstName">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="firstName"
+                        >
                             <span>*</span>First:
                         </label>
                         <input
                             required
+                            className={loginStyles.loginFormInput}
                             id="firstName"
                             {...register('firstName')}
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="lastName">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="lastName"
+                        >
                             <span>*</span>Last:
                         </label>
                         <input
                             required
+                            className={loginStyles.loginFormInput}
                             id="lastName"
                             {...register('lastName')}
                         />
                     </div>
 
-                    <p>Contact information</p>
+                    <p className={styles.userFormSubhead}>
+                        Contact information
+                    </p>
                     <div>
-                        <label htmlFor="street">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="street"
+                        >
                             <span>*</span>Street:
                         </label>
-                        <input required id="street" {...register('street')} />
+                        <input
+                            className={loginStyles.loginFormInput}
+                            required
+                            id="street"
+                            {...register('street')}
+                        />
                     </div>
 
                     <div>
-                        <label htmlFor="city">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="city"
+                        >
                             <span>*</span>City:
                         </label>
-                        <input required id="city" {...register('city')} />
+                        <input
+                            className={loginStyles.loginFormInput}
+                            required
+                            id="city"
+                            {...register('city')}
+                        />
                     </div>
                     <div>
-                        <label htmlFor="postCode">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="postCode"
+                        >
                             <span>*</span>ZIP / Post Code:
                         </label>
                         <input
                             required
+                            className={loginStyles.loginFormInput}
                             id="postCode"
                             {...register('postCode')}
                         />
                     </div>
 
-                    <p>Participant Center access information</p>
+                    <p className={styles.userFormSubhead}>
+                        Participant Center access information
+                    </p>
                     <div>
-                        <label htmlFor="login">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="login"
+                        >
                             <span>*</span>User Name:
                         </label>
-                        <input required id="login" {...register('login')} />
+                        <input
+                            className={loginStyles.loginFormInput}
+                            required
+                            id="login"
+                            {...register('login')}
+                        />
                     </div>
                     <div>
-                        <label htmlFor="password">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="password"
+                        >
                             <span>*</span>Password
                         </label>
                         <input
+                            className={loginStyles.loginFormInput}
                             required
                             id="password"
                             type="password"
@@ -164,11 +223,18 @@ export default function UserForm() {
                             maxLength={20}
                             {...register('password')}
                         />
-                        <span>6 to 20 characters</span>
+                        <span className={styles.userFormTipItalic}>
+                            6 to 20 characters
+                        </span>
                     </div>
-                    <p>Additional information</p>
+                    <p className={styles.userFormSubhead}>
+                        Additional information
+                    </p>
                     <div>
-                        <label htmlFor="size">
+                        <label
+                            className={loginStyles.loginFormLabel}
+                            htmlFor="size"
+                        >
                             Raise $100 by March 31, and we`ll send you your Walk
                             T-shirt before the event so you can wear it proudly
                             on Walk day. What is your T-shirt size?
@@ -190,22 +256,37 @@ export default function UserForm() {
                     </div>
                 </div>
 
-                <div className={styles.formActions}>
+                <div className={styles.actions}>
                     {currentStep > 0 && (
-                        <button
-                            type="button"
-                            onClick={() => handleNextStep(-1)}
+                        <div
+                            className={`${mainStyles.buttonContainer} ${mainStyles.shortButton}`}
                         >
-                            Previous Step
-                        </button>
+                            <button
+                                type="button"
+                                onClick={() => handleNextStep(-1)}
+                            >
+                                Previous Step
+                            </button>
+                        </div>
                     )}
                     {currentStep < maxStep && (
-                        <button type="button" onClick={() => handleNextStep(1)}>
-                            Next Step
-                        </button>
+                        <div
+                            className={`${mainStyles.buttonContainer} ${mainStyles.shortButton}`}
+                        >
+                            <button
+                                type="button"
+                                onClick={() => handleNextStep(1)}
+                            >
+                                Next Step
+                            </button>
+                        </div>
                     )}
                     {currentStep === maxStep && (
-                        <button type="submit">Submit</button>
+                        <div
+                            className={`${mainStyles.buttonContainer} ${mainStyles.shortButton}`}
+                        >
+                            <button type="submit">Submit</button>
+                        </div>
                     )}
                 </div>
             </form>
