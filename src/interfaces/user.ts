@@ -1,4 +1,4 @@
-import { UserRole, UserSize } from "const/user";
+import { TeamDivision, UserRole, UserSize } from "const/user";
 
 export interface User {
     id: string;
@@ -18,5 +18,14 @@ export interface UserIndividual extends User {
     size: UserSize;
     phoneNumber?: string;
     fundraisingGoal: string;
-    donation: string;
+    donation?: string;
+}
+
+export interface Teammate extends UserIndividual {
+    teamId: string;
+}
+
+export interface Team extends UserIndividual {
+    teamName: string;
+    division: TeamDivision;
 }

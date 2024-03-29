@@ -109,3 +109,41 @@
         font-size: 1.2em;
     }
 }
+
+.inputIconWrapper {
+    position: relative;
+    margin: 0;
+
+    input {
+        padding-left: 20px !important;
+    }
+
+    &:after {
+        content: '$';
+        position: absolute;
+        left: 0;
+        top: 20px;
+        left: 8px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.note {
+    margin: 5px;
+    padding: 5px;
+
+    h3 {
+        margin-top: 0px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #555555;
+    }
+
+    a {
+        color: #3596D4;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
