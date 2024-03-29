@@ -173,6 +173,32 @@ export default function UserForm() {
                                 : 'Suggested goal:&nbsp;$350.00'}
                         </span>
                     </div>
+
+                    {userType === UserRole.INDIVIDUAL && (
+                        <div>
+                            <p>
+                                Lead by example! Kick things off by making a
+                                donation. (Average donation is $75.){' '}
+                            </p>
+                            <label
+                                className={loginStyles.loginFormLabel}
+                                htmlFor="donation"
+                            >
+                                Personal donation amount:
+                            </label>
+                            <div className={styles.inputIconWrapper}>
+                                <input
+                                    className={loginStyles.loginFormInput}
+                                    type="text"
+                                    id="donation"
+                                    size={15}
+                                    maxLength={15}
+                                    required
+                                    {...register('donation')}
+                                />
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <div
