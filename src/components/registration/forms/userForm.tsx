@@ -3,10 +3,11 @@ import { useDispatch } from 'react-redux';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { UserIndividual } from 'interfaces/User';
-import { UserSize } from 'const/user';
+import { UserRole, UserSize } from 'const/user';
 import { useAddUserMutation } from 'services/user';
 import { setStatusMessage } from 'store/slices/notificationSlice';
 import { setUser } from 'store/slices/userSlice';
+import { uuid4 } from 'uuid4';
 
 import styles from './../../../styles/form.module.scss';
 import mainStyles from './../../../styles/main.module.scss';
@@ -32,7 +33,11 @@ export default function UserForm() {
     };
 
     const onSubmit: SubmitHandler<UserIndividual> = async (data) => {
-        const result = await addUser(data);
+        const result = await addUser({
+            ...data,
+            role: UserRole.INDIVIDUAL,
+            id: uuid4(),
+        });
 
         if (result) {
             sessionStorage.setItem('user', JSON.stringify(result));
