@@ -9,9 +9,9 @@ import { setStatusMessage } from 'store/slices/notificationSlice';
 import { setUser } from 'store/slices/userSlice';
 import { uuid4 } from 'uuid4';
 
-import styles from './../../styles/form.module.scss';
-import mainStyles from './../../styles/main.module.scss';
-import loginStyles from './../../styles/login.module.scss';
+import styles from './../styles/form.module.scss';
+import mainStyles from './../styles/main.module.scss';
+import loginStyles from './../styles/login.module.scss';
 
 export default function UserForm() {
     const [currentStep, setCurrentStep] = useState(0);
