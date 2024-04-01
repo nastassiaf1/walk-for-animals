@@ -11,7 +11,7 @@ import ParkingPage from 'pages/ParkingPage';
 import FundraisingtipsPage from 'pages/FundraisingtipsPage';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
-import RegistrationForm from 'components/registration/RegistrationForm';
+import RegistrationForm from 'components/RegistrationForm';
 
 const router = createBrowserRouter([
     {
