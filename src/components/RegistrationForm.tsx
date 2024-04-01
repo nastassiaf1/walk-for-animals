@@ -12,6 +12,7 @@ import { uuid4 } from 'uuid4';
 import styles from './../styles/form.module.scss';
 import mainStyles from './../styles/main.module.scss';
 import loginStyles from './../styles/login.module.scss';
+import TeamSearchForm from './TeamSearchForm';
 
 export default function UserForm() {
     const [currentStep, setCurrentStep] = useState(0);
@@ -25,6 +26,7 @@ export default function UserForm() {
     const {
         register,
         handleSubmit,
+        setValue,
         //formState: { errors }, //todo: add isLoading and errors state
     } = useForm<UserIndividual | Teammate | Team>();
 
@@ -136,6 +138,38 @@ export default function UserForm() {
                     </div>
                 )}
 
+                {userType === UserRole.TEAMMATE && (
+                    <div
+                        className={`${styles.userFormItem} ${currentStep !== maxStep - 2 ? styles.userFormItemHidden : ''}`}
+                    >
+                        <h2 className={styles.formHeader}>
+                            Join an existing team
+                        </h2>
+                        <p>
+                            Use the form below to search for the team you`d like
+                            to join.
+                        </p>
+
+                        <div className={styles.note}>
+                            <h3>Returning users, log in first!</h3>
+                            <span>
+                                <b>Note: </b>To reactivate your team from last
+                                year, you must be{' '}
+                                <Link to={`/login?type=${userType}`}>
+                                    signed in
+                                </Link>
+                            </span>
+                        </div>
+
+                        <TeamSearchForm
+                            onTeamSelect={(teamName) => {
+                                handleNextStep(+1);
+                                setValue('teamId', teamName);
+                            }}
+                        />
+                    </div>
+                )}
+
                 <div
                     className={`${styles.userFormItem} ${currentStep !== maxStep - 1 ? styles.userFormItemHidden : ''}`}
                 >
@@ -174,7 +208,8 @@ export default function UserForm() {
                         </span>
                     </div>
 
-                    {userType === UserRole.INDIVIDUAL && (
+                    {(userType === UserRole.INDIVIDUAL ||
+                        userType === UserRole.TEAMMATE) && (
                         <div>
                             <p>
                                 Lead by example! Kick things off by making a
@@ -374,7 +409,11 @@ export default function UserForm() {
                             </button>
                         </div>
                     )}
-                    {currentStep < maxStep && (
+                    {((currentStep < maxStep &&
+                        userType !== UserRole.TEAMMATE) ||
+                        (currentStep !== 0 &&
+                            currentStep < maxStep &&
+                            userType === UserRole.TEAMMATE)) && (
                         <div
                             className={`${mainStyles.buttonContainer} ${mainStyles.shortButton}`}
                         >
