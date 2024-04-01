@@ -65,7 +65,7 @@ const router = createBrowserRouter([
                         ],
                     },
                     {
-                        path: '/wfafundraisingtips',
+                        path: '/fundraising',
                         element: <Outlet />,
                         children: [
                             {
