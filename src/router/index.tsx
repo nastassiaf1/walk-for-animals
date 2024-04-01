@@ -12,6 +12,7 @@ import FundraisingtipsPage from 'pages/FundraisingtipsPage';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import RegistrationForm from 'components/RegistrationForm';
+import TeamPage from 'pages/TeamPage';
 
 const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
                             {
                                 path: '',
                                 element: <FundraisingtipsPage />,
+                            },
+                            {
+                                path: 'teams',
+                                element: <TeamPage />,
                             },
                         ],
                     },

@@ -33,8 +33,8 @@ export default function Navigation() {
                 </NavLink>
                 <div className={styles.navDropdown}>
                     <Link to="/fundraising">Fundraising tips & tools</Link>
-                    <Link to="/events">Matching gifts</Link>
-                    <Link to="/events">Teams</Link>
+                    <Link to="/fundraising/gifts">Matching gifts</Link>
+                    <Link to="/fundraising/teams">Teams</Link>
                 </div>
             </div>
 
