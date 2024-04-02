@@ -49,3 +49,52 @@
         color: #006ba6;
     }
 }
+
+.dialogWrapper {
+    position: relative;
+    display: inline-block;
+
+    .dialog {
+        box-sizing: border-box;
+        position: absolute;
+        top: 45px;
+        right: 0;
+        width: 360px;
+        padding-top: 15px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background: white;
+        border-radius: 3px;
+        box-shadow: 2px 2px 8px -4px rgba(0,0,0,0.75);
+        transition: visibility 3s ease;
+    }
+}
+
+.loginDialog {
+    text-align: end;
+
+    &Description, &Item label {
+        font-size: 16px;
+        text-align: left;
+        color: #000;
+    }
+
+    &Button {
+        font-weight: normal;
+        padding: 12px;
+    }
+
+    &Item {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 16px 0;
+
+        input {
+            border: 1px solid;
+            margin: 10px;
+            font-size: 16px;
+        }
+    }
+}

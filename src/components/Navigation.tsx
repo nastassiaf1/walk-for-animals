@@ -1,8 +1,21 @@
+import { useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import LoginForm from './LoginForm';
 
 import styles from './../styles/nav.module.scss';
+import loginStyles from './../styles/login.module.scss';
 
 export default function Navigation() {
+    const [isLoginDialogVisible, setIsLoginDialogVisible] = useState(false);
+    const dialogRef = useRef(null);
+
+    const showDialog = () => setIsLoginDialogVisible(true);
+
+    const hideDialog = () => {
+        if (!dialogRef.current.contains(document.activeElement)) {
+            setIsLoginDialogVisible(false);
+        }
+    };
     return (
         <nav className={styles.nav} aria-label="Main Navigation">
             <div className={styles.navItem}>
@@ -64,9 +77,30 @@ export default function Navigation() {
                 Donate
             </Link>
 
-            <button className={`${styles.button} ${styles.loginButton}`}>
-                <img src="./../../public/images/Login_icon_2.png" alt="Login" />
-            </button>
+            <div
+                className={loginStyles.dialogWrapper}
+                onMouseEnter={showDialog}
+                onMouseLeave={hideDialog}
+                ref={dialogRef}
+            >
+                <button
+                    className={`${styles.button} ${styles.loginButton}`}
+                    type="button"
+                >
+                    <img
+                        src="./../../public/images/Login_icon_2.png"
+                        alt="Login"
+                    />
+                </button>
+
+                {isLoginDialogVisible && (
+                    <div className={loginStyles.dialog}>
+                        <LoginForm
+                            onClose={() => setIsLoginDialogVisible(false)}
+                        />
+                    </div>
+                )}
+            </div>
         </nav>
     );
 }
