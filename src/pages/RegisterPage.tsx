@@ -77,9 +77,9 @@ export default function RegisterPage() {
                 <h3>Volunteer at the Walk</h3>
                 <p>
                     Your help is needed to make the Walk a success!{' '}
-                    <a href="SPageNavigator/wfavolunteer">
+                    <Link to="/volunteer">
                         Available volunteer roles will be posted soon
-                    </a>
+                    </Link>
                     .
                 </p>
                 <hr></hr>

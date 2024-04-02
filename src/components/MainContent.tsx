@@ -69,7 +69,7 @@ export default function MainContent() {
                     role="button"
                     aria-label="Sign up to volunteer"
                 >
-                    <Link to="/wfavolunteer">Sign up to volunteer</Link>
+                    <Link to="/volunteer">Sign up to volunteer</Link>
                 </div>
                 <h3>Why join us for Walk for Animals?</h3>
                 <p>

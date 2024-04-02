@@ -13,6 +13,7 @@ import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import RegistrationForm from 'components/RegistrationForm';
 import TeamPage from 'pages/TeamPage';
+import VolunteerPage from 'pages/VolunteerPage';
 
 const router = createBrowserRouter([
     {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
                                 element: <TeamPage />,
                             },
                         ],
+                    },
+                    {
+                        path: '/volunteer',
+                        element: <VolunteerPage />,
                     },
                 ],
             },
