@@ -87,8 +87,8 @@ export default function TeamSearchForm({ onTeamSelect }: TeamSearchFormProps) {
                     Start a new team
                 </Link>
                 <span className={styles.linkDivider}>|</span>
-                <Link to={`/login?type=${UserRole.TEAM}`}>
-                    Participate as an individual
+                <Link to={`/login?type=${UserRole.INDIVIDUAL}`}>
+                    Participate as an Participate as an individualindividual
                 </Link>
             </div>
         </div>
